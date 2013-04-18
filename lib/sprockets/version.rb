@@ -1,3 +1,4 @@
 module Sprockets
-  VERSION = "2.9.2"
+  # hack so rails allows it
+  VERSION = "2.2.3"
 end
