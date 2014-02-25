@@ -321,7 +321,8 @@ module Sprockets
       return to_enum(__method__) unless block_given?
       paths.each do |root|
         each_entry(root) do |path|
-          if !stat(path).directory?
+          sp = stat(path)
+          if sp && !sp.directory?
             yield path
           end
         end
