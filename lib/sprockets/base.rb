@@ -304,7 +304,8 @@ module Sprockets
         path = root.join(filename)
         paths << path
 
-        if stat(path).directory?
+        sp = stat(path)
+        if sp && sp.directory?
           each_entry(path) do |subpath|
             paths << subpath
           end
